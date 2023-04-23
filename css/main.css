@@ -1,0 +1,572 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 2.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #444;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 4em 1.5em;
+}
+
+.navigation {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  z-index: 999;
+}
+
+.nav {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  padding: 1em 1em;
+  width: 100%;
+}
+.nav__logo {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.nav__logo a {
+  color: #444;
+  text-decoration: none;
+}
+.nav__items {
+  display: flex;
+  gap: 2em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.nav__item {
+  padding: 1em;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav__item:hover {
+  color: #da6019;
+}
+.nav__items {
+  display: none;
+}
+.nav__menu-bars--icon {
+  padding: 0.5em;
+  font-size: 2.2em;
+  color: #444;
+  z-index: 100;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.nav__menu-bars--icon:hover {
+  color: #da6019;
+}
+.nav__mobile {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -99;
+  transition: all 0.3s;
+}
+.nav__mobile-menu {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #eee;
+  font-size: 2.4rem;
+  position: absolute;
+  z-index: -999;
+  width: 100%;
+}
+
+.show {
+  display: flex;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  background-image: url(../img/roof-640.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 100;
+}
+.header__heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.header__text {
+  margin-top: 1em;
+  font-size: 1.4rem;
+}
+.header__btn {
+  margin-top: 2em;
+  padding: 0.8em 1.6em;
+  font-size: 1.4rem;
+  color: #444;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #eee;
+}
+.header__btn:hover {
+  color: #da6019;
+}
+.header__shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(104, 101, 101, 0.75);
+  z-index: -100;
+}
+
+.projects__box {
+  display: flex;
+  flex-direction: column;
+  margin: 4em 0;
+}
+.projects__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.projects__title {
+  margin-bottom: 0.5em;
+}
+.projects__text {
+  font-size: 1.4rem;
+}
+
+.offers {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+.offers__cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.offers__card {
+  position: relative;
+  margin: 1em 2em;
+  width: 300px;
+  height: 450px;
+  perspective: 800px;
+  transition: 0.8s;
+}
+.offers__card:hover .offers__card-text {
+  transform: rotate(0);
+  opacity: 1;
+}
+.offers__card:hover .offers__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.offers__card-more-info {
+  position: absolute;
+  padding: 1em;
+  right: 0;
+  bottom: -1em;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.offers__card-title {
+  margin: 1em;
+  padding: 2em 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px rgba(68, 68, 68, 0.7058823529);
+}
+.offers__card-img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  transition: 0.8s;
+}
+.offers__card-img-one {
+  background-image: url(../img/card-one-640.jpg);
+}
+.offers__card-img-two {
+  background-image: url(../img/card-two-640.jpg);
+}
+.offers__card-img-three {
+  background-image: url(../img/card-three-640.jpg);
+}
+.offers__card-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2em;
+  background-image: linear-gradient(315deg, #d4d4d4 0%, #ec6212 74%);
+  border-radius: 15px;
+  text-align: center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  transition: 0.8s;
+}
+.offers__card-text h3 {
+  font-size: 2.2rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.offers__card-text-info-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2em;
+  padding: 1em;
+  width: 50%;
+  color: #444;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  transform: translate(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.offers__card-text-info-btn:hover {
+  background-color: #eee;
+}
+.offers__card-text-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+.offers__card-text-info-list-item {
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+.offers__card-text-info-list-item:last-child {
+  border-bottom: none;
+}
+
+.reviews__boxes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reviews__box {
+  position: relative;
+  margin: 1em;
+  padding: 2em;
+  height: 350px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(31, 31, 31, 0.1803921569);
+  transition: transform 0.3s;
+}
+.reviews__box:hover {
+  transform: scale(1.05);
+}
+.reviews__box-img {
+  position: absolute;
+  top: 5em;
+  left: 5em;
+  transform: translate(-50%, -50%);
+}
+.reviews__box-img img {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.reviews__box-name {
+  position: relative;
+  margin-left: 6em;
+  margin-top: 2em;
+  font-size: 1.8rem;
+}
+.reviews__box-name::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
+  width: 5em;
+  height: 2px;
+  background-color: #ec6212;
+}
+.reviews__box-text {
+  bottom: 4em;
+  margin-top: 4em;
+  color: #444;
+  font-size: 1.6rem;
+}
+.reviews__more-reviews {
+  position: absolute;
+  bottom: -4em;
+  right: 1em;
+  padding: 1em;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.reviews__more-reviews:hover {
+  color: #da6019;
+}
+
+.contact {
+  position: relative;
+  background-color: #eee;
+  overflow: hidden;
+}
+.contact__form, .contact__form-top {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form-input {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-textarea {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 150px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-btn {
+  align-self: center;
+  padding: 1em;
+  width: 100%;
+  max-width: 200px;
+  color: #fff;
+  background-color: #444;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact__form-btn:hover {
+  background-color: #585858;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+  color: #fff;
+  background-color: #444;
+}
+
+@media (min-width: 576px) {
+  .projects__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .projects__box-text {
+    width: 40%;
+    font-size: 2rem;
+  }
+  .projects__box-text--right {
+    text-align: right;
+  }
+  .projects__box-img {
+    position: relative;
+    width: 50%;
+  }
+  .projects__box-img--right {
+    order: 1;
+  }
+  .projects__box-img::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    right: -25px;
+    bottom: -25px;
+    width: 95%;
+    height: 95%;
+    background-color: rgba(236, 98, 18, 0.6784313725);
+    z-index: -199;
+  }
+  .projects__img {
+    margin-bottom: 0;
+    min-height: 350px;
+  }
+  .contact__form-btn {
+    align-self: flex-end;
+  }
+  .contact__form-input {
+    width: 40%;
+  }
+}
+@media (min-width: 768px) {
+  .nav__logo {
+    font-size: 3.2rem;
+  }
+  .nav__items {
+    display: block;
+  }
+  .nav__item {
+    font-size: 1.8rem;
+  }
+  .nav__menu-bars {
+    display: none;
+  }
+  .nav__mobile {
+    display: none;
+  }
+  .header {
+    background-image: url(../img/roof-1920.jpg);
+  }
+  .header__heading {
+    font-size: 4.8rem;
+  }
+  .projects__text {
+    font-size: 1.8rem;
+  }
+  .projects__title {
+    font-size: 2.6rem;
+  }
+  .projects__box-text {
+    width: 55%;
+  }
+  .projects__box-img {
+    position: relative;
+    width: 40%;
+  }
+  .offers__card-title {
+    font-size: 2.2rem;
+  }
+  .offers__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .offers__card {
+    margin: 1em;
+    width: 45%;
+    height: 500px;
+  }
+  .offers__card-img-one {
+    background-image: url(../img/card-one-1920.jpg);
+  }
+  .offers__card-img-two {
+    background-image: url(../img/card-two-1920.jpg);
+  }
+  .offers__card-img-three {
+    background-image: url(../img/card-three-1920.jpg);
+  }
+  .offers__card-text h3 {
+    margin-top: 1em;
+    margin-bottom: 1.2em;
+  }
+  .section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
+  .reviews__boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .reviews__box {
+    margin: 2em;
+    height: 400px;
+    width: 330px;
+  }
+}
+@media (min-width: 992px) {
+  .nav__items {
+    gap: 2.5em;
+    font-size: 2rem;
+  }
+  .projects__box {
+    margin: 5em 0;
+  }
+  .projects__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+  }
+  .projects__title {
+    font-size: 3.2rem;
+  }
+  .projects__text {
+    font-size: 1.8rem;
+  }
+  .section-heading {
+    font-size: 4.2rem;
+  }
+  .section-padding {
+    padding: 10em 2em;
+  }
+}
+@media (min-width: 1200px) {
+  .offers__card {
+    width: 30%;
+  }
+}/*# sourceMappingURL=main.css.map */

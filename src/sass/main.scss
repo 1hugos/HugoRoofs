@@ -216,8 +216,6 @@ body {
 
 //offers
 .offers {
-	width: 100%;
-	height: 100%;
 	background-color: $light-white;
 	&__cards {
 		display: flex;
@@ -227,7 +225,7 @@ body {
 
 	&__card {
 		position: relative;
-		margin: 1em 2em;
+		margin: 1em 1em;
 		width: 300px;
 		height: 450px;
 		perspective: 800px;
@@ -248,14 +246,14 @@ body {
 		position: absolute;
 		padding: 1em;
 		right: 0;
-		bottom: -1em;
+		bottom: -0.3em;
 		color: $pure-white;
 		font-size: 3rem;
 		cursor: pointer;
 	}
 
 	&__card-title {
-		margin: 1em;
+		margin: 0 1em;
 		padding: 2em 0;
 		color: $pure-white;
 		text-align: center;
