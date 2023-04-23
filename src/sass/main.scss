@@ -1,0 +1,704 @@
+@use "./colors" as *;
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Comfortaa", cursive;
+	font-size: 1.6rem;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-heading {
+	position: relative;
+	margin-bottom: 2em;
+	font-size: 2.6rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: $main-color;
+	letter-spacing: 2px;
+}
+
+.section-padding {
+	padding: 4em 1.5em;
+}
+
+.show {
+	display: flex;
+}
+
+//nav
+
+.navigation {
+	position: sticky;
+	top: 0;
+	background-color: $pure-white;
+	border-bottom: 1px solid rgb(230, 230, 230);
+	z-index: 999;
+}
+
+.nav {
+	position: sitcky;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	left: 0;
+	padding: 1em 1em;
+	width: 100%;
+
+	&__logo {
+		font-size: 3rem;
+		text-transform: uppercase;
+		a {
+			color: #444;
+			text-decoration: none;
+		}
+	}
+
+	&__items {
+		display: flex;
+		gap: 2em;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		padding: 1em;
+		color: #444;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $orange-color-hover;
+		}
+	}
+
+	&__items {
+		display: none;
+	}
+
+	&__menu-bars--icon {
+		padding: 0.5em;
+		font-size: 2.2em;
+		color: #444;
+		z-index: 100;
+		cursor: pointer;
+		transition: color 0.3s;
+		&:hover {
+			color: $orange-color-hover;
+		}
+	}
+
+	&__mobile {
+		position: absolute;
+		display: none;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -100;
+		transition: all 0.3s;
+	}
+
+	&__mobile-menu {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		background-color: $light-white;
+		font-size: 2.4rem;
+		position: absolute;
+		z-index: -99999;
+		width: 100%;
+	}
+}
+
+//header
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 100vh;
+	text-align: center;
+	color: $pure-white;
+	background-image: url(../img/roof-640.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	z-index: 100;
+
+	&__heading {
+		font-size: 3rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin-top: 1em;
+		font-size: 1.4rem;
+	}
+
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		font-size: 1.4rem;
+		color: $main-color;
+		background-color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: color 0.3s;
+		cursor: pointer;
+
+		&::before {
+			background-color: $light-white;
+		}
+
+		&:hover {
+			color: $orange-color-hover;
+		}
+	}
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(104, 101, 101, 0.75);
+		z-index: -100;
+	}
+}
+
+//main
+//projects
+
+.projects {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 4em 0;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+	// &__box-text{
+	// 	width: 50%;
+	// }
+}
+
+//offers
+.offers {
+	width: 100%;
+	height: 100%;
+	background-color: $light-white;
+	&__cards {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__card {
+		position: relative;
+		margin: 1em 2em;
+		width: 300px;
+		height: 450px;
+		perspective: 800px;
+		transition: 0.8s;
+
+		&:hover .offers__card-text {
+			transform: rotate(0);
+			opacity: 1;
+		}
+
+		&:hover .offers__card-img {
+			transform: rotateY(-180deg);
+			opacity: 0;
+		}
+	}
+
+	&__card-more-info {
+		position: absolute;
+		padding: 1em;
+		right: 0;
+		bottom: -0.3em;
+		color: $pure-white;
+		font-size: 3rem;
+		cursor: pointer;
+	}
+
+	&__card-title {
+		margin: 1em;
+		padding: 2em 0;
+		color: $pure-white;
+		text-align: center;
+		text-shadow: 2px 2px #444444b4;
+	}
+
+	&__card-img {
+		width: 100%;
+		height: 100%;
+		background-position: center;
+		background-size: cover;
+		border-radius: 15px;
+		transition: 0.8s;
+	}
+
+	&__card-img-one {
+		background-image: url(../img/card-one-640.jpg);
+	}
+
+	&__card-img-two {
+		background-image: url(../img/card-two-640.jpg);
+	}
+
+	&__card-img-three {
+		background-image: url(../img/card-three-640.jpg);
+	}
+
+	&__card-text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 30px;
+		background-image: linear-gradient(315deg, #d4d4d4 0%, $orange-color 74%);
+		border-radius: 15px;
+		text-align: center;
+		transform: rotateY(-180deg);
+		opacity: 0;
+		transition: 0.8s;
+
+		h3 {
+			font-size: 2.2rem;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		&-info-btn {
+			position: absolute;
+			left: 50%;
+			bottom: 2em;
+			padding: 1em;
+			width: 50%;
+			color: $main-color;
+			background-color: $pure-white;
+			border: none;
+			border-radius: 8px;
+			transition: background-color 0.3s;
+			transform: translate(-50%);
+			cursor: pointer;
+
+			&:hover {
+				background-color: $light-white;
+			}
+		}
+
+		&-info-list {
+			margin: 0 auto;
+			width: 70%;
+			list-style: none;
+
+			&-item {
+				padding: 1em;
+				border-bottom: 1px solid $light-white;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+//reviews
+
+.reviews {
+	&__boxes {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__box {
+		position: relative;
+		margin: 1em;
+		padding: 2em;
+		height: 350px;
+		width: 300px;
+		border-radius: 8px;
+		box-shadow: 3px 3px 10px #1f1f1f2e;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	&__box-img {
+		position: absolute;
+		top: 5em;
+		left: 5em;
+		transform: translate(-50%, -50%);
+
+		img {
+			width: 70px;
+			height: 70px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+
+	&__box-name {
+		position: relative;
+		margin-left: 6em;
+		margin-top: 2em;
+		font-size: 1.8rem;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -0.5em;
+			width: 5em;
+			height: 2px;
+			background-color: $orange-color;
+		}
+	}
+
+	&__box-text {
+		bottom: 4em;
+		margin-top: 4em;
+		font-size: 1.6rem;
+		color: $main-color;
+	}
+
+	&__more-reviews {
+		position: absolute;
+		bottom: -4em;
+		right: 1em;
+		padding: 1em;
+		color: $main-color;
+		cursor: pointer;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $orange-color-hover;
+		}
+	}
+}
+
+//contact
+
+.contact {
+	position: relative;
+	background-color: $light-white;
+	overflow: hidden;
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		margin-top: 0.5em;
+		margin-bottom: 2em;
+		padding: 0.6em 1.2em;
+		width: 100%;
+		border: none;
+		border-radius: 8px;
+		font-size: 1.6rem;
+	}
+
+	&__form-textarea {
+		margin-bottom: 2em;
+		padding: 0.6em 1.2em;
+		border: none;
+		border-radius: 8px;
+		font-size: 1.6rem;
+
+		max-width: 100%;
+		min-width: 100%;
+		width: 100%;
+		min-height: 150px;
+	}
+
+	&__form-btn {
+		align-self: center;
+		padding: 1em;
+		width: 100%;
+		max-width: 200px;
+		color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: $main-color;
+		transition: background-color 0.3s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $main-color-hover;
+		}
+	}
+}
+
+//footer
+
+.footer {
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 4em;
+		color: $pure-white;
+		background-color: $main-color;
+	}
+}
+
+
+// media
+// ================================================
+@media (min-width: 576px) {
+	.projects {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 40%;
+				font-size: 2rem;
+				&--right {
+					text-align: right;
+				}
+			}
+
+			&-img {
+				position: relative;
+				width: 50%;
+
+				&--right {
+					order: 1;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					display: flex;
+					right: -25px;
+					bottom: -25px;
+					width: 95%;
+					height: 95%;
+					background-color: $orange-color-frame;
+					z-index: -199;
+				}
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+			min-height: 350px;
+		}
+	}
+	.contact {
+		&__form-btn {
+			align-self: flex-end;
+		}
+
+		&__form-input {		
+			width: 40%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__logo {
+			font-size: 3.2rem;
+		}
+
+		&__items {
+			display: block;
+		}
+
+		&__item {
+			font-size: 1.8rem;
+		}
+
+		&__menu-bars {
+			display: none;
+		}
+
+		&__mobile {
+			display: none;
+			// opacity: 0;
+		}
+	}
+
+	.header {
+		background-image: url(../img/roof-1920.jpg);
+		&__heading {
+			font-size: 4.8rem;
+		}
+	}
+
+	.projects {
+		&__text {
+			font-size: 1.8rem;
+		}
+		&__title{
+			font-size: 2.6rem;
+		}	
+			&__box {
+				&-text {
+					width: 55%;
+				}
+	
+				&-img {
+					position: relative;
+					width: 40%;
+				}
+			}
+	}
+
+	.offers {
+		&__card-title{
+			font-size: 2.2rem;
+		}
+
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 45%;
+			height: 500px;
+		}
+		&__card-img-one {
+			background-image: url(../img/card-one-1920.jpg);
+		}
+
+		&__card-img-two {
+			background-image: url(../img/card-two-1920.jpg);
+		}
+
+		&__card-img-three {
+			background-image: url(../img/card-three-1920.jpg);
+		}
+
+		&__card-text {
+			h3 {
+				margin-top: 1em;
+				margin-bottom: 1.2em;
+			}
+		}
+
+	}
+
+	.section-heading {
+		font-size: 3.6rem;
+	}
+
+	.section-padding {
+		padding: 8em 2em;
+	}
+
+	.reviews {
+		&__boxes {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__box {
+			margin: 2em;
+			height: 400px;
+			width: 330px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__items {
+			gap: 2.5em;
+			font-size: 2rem;
+		}
+	}
+
+	.projects {
+		&__box {
+			margin: 5em 0;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
+			}
+		}
+
+		&__title {
+			font-size: 3.2rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+
+	.section-heading {
+		font-size: 4.2rem;
+	}
+
+	.section-padding {
+		padding: 10em 2em;
+	}
+}
+
+@media (min-width: 1200px) {
+	.offers {
+		&__card {
+			width: 30%;
+		}
+	}
+}
